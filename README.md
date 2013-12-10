@@ -7,5 +7,5 @@ The project is about providing led signalistion solutions for Quadcopter project
 
 Welcome to the Dji-Led Project! 
 
-![alt text](https://github.com/diogeneyves/dji-naza-led/images/wiring.png "Arduino wiring schema")
+![alt text](https://raw.github.com/diogeneyves/dji-naza-led/master/images/wiring.png "Arduino wiring schema")
 
