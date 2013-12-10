@@ -9,3 +9,4 @@ Welcome to the Dji-Led Project!
 
 ![alt text](https://raw.github.com/diogeneyves/dji-naza-led/master/images/wiring.png "Arduino wiring schema")
 
+[![Demo video](http://img.youtube.com/vi/slst10RpRxM/0.jpg)](http://www.youtube.com/watch?v=slst10RpRxM)
