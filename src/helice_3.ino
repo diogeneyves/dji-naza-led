@@ -67,19 +67,23 @@ word getAnimationSpeed(void) {
   // Determine the animation speed based on the previous read and limite the index in range 0 - 11
   byte animationSpeedIndex = (byte)(ceil((float)duration / 200.0f)) % 11;
   // Select the animation speed
-  animationSpeed = animationSpeeds[animationSpeedIndex];
+  return animationSpeeds[animationSpeedIndex];
 }
 
 unsigned long int getAnimationColor(word animationSpeed) {
   static const unsigned long int animationColors[] = { 0x000000, 0x00FF00, 0xFF0000, 0xFF9900 }; // colors of animation
+  static unsigned long int animationColor = 0x000000;
   // read Naza red led
   int sensorValue0 = analogRead(A4);
   // read Naza green led
   int sensorValue1 = analogRead(A5);
   byte animationColorIndex = (sensorValue0 > 500) + ((sensorValue1 > 500) << 1);
+  
   if (animationColorIndex != 0 || animationSpeed != 0) {
     animationColor = animationColors[animationColorIndex];
   }
+  
+  return animationColor;
 }
 
 void playAnimation(word animationSpeed, unsigned long int animationColor) {
