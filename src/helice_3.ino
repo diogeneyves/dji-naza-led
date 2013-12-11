@@ -36,7 +36,7 @@ For more detail on the MIT license, see <http://opensource.org/licenses/MIT>
 #define ROTL(v, n) (v << n) | (v >> (sizeof(v) * 8 - n))
 #define ROTR(v, n) (v >> n) | (v << (sizeof(v) * 8 - n))
 
-#define PIN 7
+#define PIN 9
 #define RADIOIN1 10 // 'gaz' command
 #define RADIOIN2 11 // animation selector
 #define FADING_STEP 5
