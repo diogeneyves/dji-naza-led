@@ -3,9 +3,9 @@
 An Open Source Arduino based DJI Led project.
 
 Program : DJI Led (Firmware)
-Version : V1.0, Decembre 11th 2013
+Version : V1.1, Decembre 11th 2013
 Author(s): Yves Gohy
-Thanks to: Leandre Gohy
+Thanks to: Leandre Gohy (leandre.gohy@hexeo.be)
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
@@ -64,10 +64,10 @@ word getAnimationSpeed(void) {
   static const int animationSpeeds[] = { 0, 0, 0, 0, 0, 0, 320, 160, 80, 40, 20, 10 }; // speeds of animation
   // Read the radio 'gaz' command
   unsigned long int duration = pulseIn(RADIOIN1, HIGH, 25000);
-  // Determine the animation speed based on the previous read and limite the index in range 0 - 11
-  byte animationSpeedIndex = (byte)(ceil((float)duration / 200.0f)) % 11;
-  // Select the animation speed
-  return animationSpeeds[animationSpeedIndex];
+  // Determine the animation speed based on the previous read
+  byte animationSpeedIndex = (byte)(ceil((float)duration / 200.0f));
+  // Select the animation speed and limit the index in range 0 - 11
+  return animationSpeeds[((animationSpeedIndex <= 11) ? animationSpeedIndex : 11)];
 }
 
 unsigned long int getAnimationColor(word animationSpeed) {
@@ -79,7 +79,7 @@ unsigned long int getAnimationColor(word animationSpeed) {
   int sensorValue1 = analogRead(A5);
   byte animationColorIndex = (sensorValue0 > 500) + ((sensorValue1 > 500) << 1);
   
-  if (animationColorIndex != 0 || animationSpeed != 0) {
+  if (animationColorIndex != 0 || animationSpeed == 0) {
     animationColor = animationColors[animationColorIndex];
   }
   
@@ -136,8 +136,8 @@ void playAnimationRing(unsigned long int animationColor) {
 }
 
 void playAnimationFading(unsigned long int animationColor) {
-  static int direction = 1; // start direction fading
-  static int intensity = 5;
+  static byte direction = 1; // start direction fading
+  static word intensity = 0;
 
   for (byte i = 0; i < 64; i++) {
     pixels.setPixelColor(i, animationColor);
@@ -145,14 +145,14 @@ void playAnimationFading(unsigned long int animationColor) {
   
   intensity += direction * FADING_STEP;
   
-  if ( intensity > 250 ) {
+  if ( intensity >= 255 ) {
     direction = -1;
   }
-  else if ( intensity < 5 ) {
+  else if ( intensity <= 0 ) {
     direction = 1;
   }
   
-  pixels.setBrightness(intensity);
+  pixels.setBrightness(((intensity <= 255) ? intensity : 255));
   pixels.show();
 }
 
