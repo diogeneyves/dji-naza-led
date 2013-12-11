@@ -37,8 +37,8 @@ For more detail on the MIT license, see <http://opensource.org/licenses/MIT>
 #define ROTR(v, n) (v >> n) | (v << (sizeof(v) * 8 - n))
 
 #define PIN 7
-#define RADIOIN1 13 // 'gaz' command
-#define RADIOIN2 14 // animation selector
+#define RADIOIN1 10 // 'gaz' command
+#define RADIOIN2 11 // animation selector
 #define FADING_STEP 5
 #define BRIGHTNESS 30 // brightness 0-255  
 
@@ -53,8 +53,8 @@ void setup() {
   Serial.begin(9600);
   pixels.begin();
   pixels.setBrightness(BRIGHTNESS);
-  pinMode(A4, INPUT);
-  pinMode(A5, INPUT);
+  pinMode(A2, INPUT);
+  pinMode(A3, INPUT);
   pinMode(RADIOIN1, INPUT);
   pinMode(RADIOIN2, INPUT);
   //radiomin = pulseIn(RADIOIN, HIGH, 25000); // store min throtle
