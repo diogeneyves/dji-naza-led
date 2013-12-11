@@ -4,7 +4,7 @@ An Open Source Arduino based DJI Led project.
 
 Program : DJI Led (Firmware)
 Version : V1.1, Decembre 11th 2013
-Author(s): Yves Gohy
+Author(s): Yves Gohy (diogeneyves@gmail.com)
 Thanks to: Leandre Gohy (leandre.gohy@hexeo.be)
 
 Permission is hereby granted, free of charge, to any person obtaining
