@@ -1,0 +1,31 @@
+Présentation.
+
+Ce projet à été réalisé afin de permettre une meilleure visibilité sur tous les angles, puisque la led d'origine ne permet pas une bonne vue en permanence
+
+Il y a deux animations également possible en vol.
+
+C'est réalisé avec des anneaux de led's Neopixel (4 ring de 16 led's adressables) et un module Arduino; le choix de l'Arduino est libre, il faut juste respecter les entrées et sorties ou encore éditer le code.
+
+Fonctionnement.
+
+Au repos, donc au sol, moteurs OFF, Gaz inférieur à 1000ms (signal servo),le statut des anneaux de led's est identique à celui de la led d'origine du Dji Naza V2.
+
+Au-dessus de 1000ms, dès que l'armement des moteurs est effectué, l'animation des anneaux des led's commencent. 
+
+Il y a deux animations possible, si vous utilisez une voie complémentaire pour faire cette sélection.
+
+La première par défaut ou avec une signal inférieur à 1500ms est une animation tournante, copie du sens des moteurs M1, M2, M3 et M4. Attention à l'ordre du montage.
+La vitesse de rotation varie en fonction des gaz.
+
+L'autre animation est active avec un signal supérieur à 1500 ms est un fading, c'est à dire que la luminosité va d'un minimum vers un maximum et retour en boucle. La vitesse du fading varie également en fonction des gaz.
+
+Dans les deux cas d'animation en vol la couleur du statut de la led d'origine est respectée, mais plus les éventuelles séquences clignotantes car animations.
+
+Pour l'identification des couleurs, reportez-vous au mode d'emploi du Dji Naza V2.
+
+Les commentaires dans le code vous permettra d'y voir plus clair pour y apporter vos modifications, vitesses, couleurs des animations par exemples.
+
+Si le montage, la programmation, n'est pas votre tasse de thé, contactez-moi, je préparerai un kit prêt à l'emploi dès janvier 2014.
+
+
+

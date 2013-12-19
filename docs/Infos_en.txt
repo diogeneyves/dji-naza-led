@@ -1,0 +1,28 @@
+Presentation.
+
+This project was designed to improve visibility from all angles , because the original LED does not allow a good view at all times.
+
+There are two animations also possible in flight.
+
+This is done with rings led's Neopixel (4 ring 16 addressable LED 's ) and an Arduino module, the choice of the Arduino is free, it is necessary to respect the inputs and outputs or edit the code.
+
+Operation.
+
+At rest , at ground , motor OFF, less than 1000ms Gas (servo signal), the status of LED 's rings is identical to that of the original led Dji Naza V2.
+
+Over 1000ms , when arming the motors starts , animation rings led's start.
+
+There are two animations, if you use an additional channel to make this selection .
+
+The first, by default or with a signal less than 1500ms is a rotating animation, it's a copy of direction of motors M1 , M2 , M3 and M4 . Attention to the order of assembly.
+The speed of animation ,varies with throttle .
+
+The other animation is active with a greater than 1500 ms signal, is a fading , the brightness varies from a minimum to a maximum and back again. The fading speed also varies with throttle .
+
+In both cases animation flying color status LED original is respected, but any more flashing sequences, because  there are animations.
+
+For the identification of colors , refer to the instruction manual of Dji Naza V2.
+
+The comments in the code helps you  to make your changes , speeds, colors animations for example .
+
+If editing, programming is not your cup of tea, contact me, I will prepare a kit ready for use in January 2014.
