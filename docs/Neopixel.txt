@@ -1,0 +1,4 @@
+NeoPixel Ring - 16 x WS2812 5050 RGB LED with Integrated Drivers - 
+
+
+http://www.adafruit.com/products/1463
