@@ -13,8 +13,3 @@ Welcome to the Dji-Led Project!
 
 [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/diogeneyves/dji-naza-led/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
 
-<script src="paypal-button.min.js?merchant=diogeneyves@gmail.com"
-    data-button="donate"
-    data-name="My product"
-    data-amount="1.00"
-></script>
