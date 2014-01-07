@@ -74,9 +74,9 @@ unsigned long int getAnimationColor(word animationSpeed) {
   static const unsigned long int animationColors[] = { 0x000000, 0x00FF00, 0xFF0000, 0xFF9900 }; // colors of animation
   static unsigned long int animationColor = 0x000000;
   // read Naza red led
-  int sensorValue0 = analogRead(A4);
+  int sensorValue0 = analogRead(A2);
   // read Naza green led
-  int sensorValue1 = analogRead(A5);
+  int sensorValue1 = analogRead(A3);
   byte animationColorIndex = (sensorValue0 > 500) + ((sensorValue1 > 500) << 1);
   
   if (animationColorIndex != 0 || animationSpeed == 0) {
