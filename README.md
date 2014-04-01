@@ -11,5 +11,5 @@ Welcome to the Dji-Led Project!
 
 [![Demo video](http://img.youtube.com/vi/slst10RpRxM/0.jpg)](http://www.youtube.com/watch?v=slst10RpRxM)
 
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/diogeneyves/dji-naza-led/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
 
